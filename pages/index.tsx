@@ -3,6 +3,12 @@ import { styled } from '../stitches.config'
 import { Box } from '../components/box'
 import { Output } from '../components/output'
 import { VideoForm } from '../components/video-form'
+import {
+  TabsContent,
+  TabsList,
+  TabsRoot,
+  TabsTrigger
+} from '../components/tabs'
 
 const Text = styled('p', {
   fontFamily: '$system',
@@ -37,7 +43,18 @@ export default function Home() {
       <Container size={{ '@initial': '1', '@bp1': '2' }}>
         <Text as="h1">Vlog Transcription &amp; Japanese Translation Tool</Text>
         <VideoForm />
-        <Output>Hello, world</Output>
+        <TabsRoot defaultValue="progress">
+          <TabsList aria-label="Output">
+            <TabsTrigger value="progress">Progress</TabsTrigger>
+            <TabsTrigger value="result">Result</TabsTrigger>
+          </TabsList>
+          <TabsContent value="progress">
+            <Output>Progress will go here</Output>
+          </TabsContent>
+          <TabsContent value="result">
+            <Output>Result will go here</Output>
+          </TabsContent>
+        </TabsRoot>
       </Container>
     </Box>
   )
