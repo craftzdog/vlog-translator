@@ -16,8 +16,13 @@ const Text = styled('p', {
 })
 
 const Container = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  height: '100vh',
+  marginY: 0,
   marginX: 'auto',
   paddingX: '$3',
+  paddingY: 0,
 
   variants: {
     size: {
