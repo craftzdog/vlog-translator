@@ -23,4 +23,4 @@ def translate_text(text):
 
 for index, subtitle in enumerate(subs):
     subtitle.text = translate_text(subtitle.text)
-    print(subtitle)
+    print(subtitle, flush = True)
