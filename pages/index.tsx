@@ -1,9 +1,8 @@
 import Head from 'next/head'
 import StitchesLogo from '../components/StitchesLogo'
 import { styled } from '../stitches.config'
+import { Box } from './components/box'
 import { VideoForm } from './components/video-form'
-
-const Box = styled('div', {})
 
 const Text = styled('p', {
   fontFamily: '$system',
