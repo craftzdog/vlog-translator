@@ -9,6 +9,7 @@ import {
   TabsRoot,
   TabsTrigger
 } from '../components/tabs'
+import { useState } from 'react'
 
 const Text = styled('p', {
   fontFamily: '$system',
@@ -40,6 +41,15 @@ const Container = styled('div', {
 })
 
 export default function Home() {
+  const [isProcessing, setProcessing] = useState(false)
+  const [progressOutput, setProgressOutput] = useState('')
+  const [activeTab, setActiveTab] = useState('progress')
+  const [resultTranscript, setResultTranscript] = useState('')
+
+  const handleStartProcessing = async (videoUrl: string) => {
+    // TODO
+  }
+
   return (
     <Box css={{ paddingY: '$6' }}>
       <Head>
@@ -47,17 +57,20 @@ export default function Home() {
       </Head>
       <Container size={{ '@initial': '1', '@bp1': '2' }}>
         <Text as="h1">Vlog Transcription &amp; Japanese Translation Tool</Text>
-        <VideoForm />
-        <TabsRoot defaultValue="progress">
+        <VideoForm
+          onSubmit={handleStartProcessing}
+          isProcessing={isProcessing}
+        />
+        <TabsRoot value={activeTab} onValueChange={setActiveTab}>
           <TabsList aria-label="Output">
             <TabsTrigger value="progress">Progress</TabsTrigger>
             <TabsTrigger value="result">Result</TabsTrigger>
           </TabsList>
           <TabsContent value="progress">
-            <Output>Progress will go here</Output>
+            <Output>{progressOutput}</Output>
           </TabsContent>
           <TabsContent value="result">
-            <Output>Result will go here</Output>
+            <Output>{resultTranscript}</Output>
           </TabsContent>
         </TabsRoot>
       </Container>
