@@ -1,7 +1,13 @@
 import { Head, Html, Main, NextScript } from 'next/document'
-import { getCssText } from '../stitches.config'
+import { getCssText, globalCss } from '../stitches.config'
+
+const globalStyles = globalCss({
+  body: { fontFamily: '$system', padding: 0, margin: 0 }
+})
 
 export default function MyDocument() {
+  globalStyles()
+
   return (
     <Html lang="en">
       <Head>
