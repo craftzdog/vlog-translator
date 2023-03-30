@@ -38,15 +38,10 @@ export default function Home() {
   return (
     <Box css={{ paddingY: '$6' }}>
       <Head>
-        <title>Use Stitches with Next.js</title>
+        <title>YouTube Transcription &amp; Japanese Translation</title>
       </Head>
       <Container size={{ '@initial': '1', '@bp1': '2' }}>
-        <StitchesLogo />
-        <Text as="h1">Hello, from Stitches.</Text>
-        <Text>
-          For full documentation, visit{' '}
-          <Link href="https://stitches.dev">stitches.dev</Link>.
-        </Text>
+        <Text as="h1">Vlog Transcription &amp; Japanese Translation Tool</Text>
       </Container>
     </Box>
   )
