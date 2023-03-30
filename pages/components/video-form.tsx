@@ -2,30 +2,39 @@ import React from 'react'
 import * as Form from '@radix-ui/react-form'
 import { styled } from '@stitches/react'
 
-export const VideoForm = () => (
-  <FormRoot>
-    <FormField name="videoUrl">
-      <Flex css={{ alignItems: 'baseline', justifyContent: 'space-between' }}>
-        <FormLabel>Video URL</FormLabel>
-        <FormMessage match="valueMissing">Please enter a video URL</FormMessage>
-        <FormMessage match="typeMismatch">
-          Please provide a valid URL
-        </FormMessage>
-      </Flex>
-      <Form.Control asChild>
-        <Input
-          type="text"
-          name="videoUrl"
-          required
-          placeholder="https://www.youtube.com/watch?v="
-        />
-      </Form.Control>
-    </FormField>
-    <Form.Submit asChild>
-      <Button css={{ marginTop: 10 }}>Start processing</Button>
-    </Form.Submit>
-  </FormRoot>
-)
+type Props = {
+  onSubmit: (videoUrl: string) => void
+  isProcessing: boolean
+}
+
+export const VideoForm: React.FC<Props> = ({ onSubmit, isProcessing }) => {
+  return (
+    <FormRoot>
+      <FormField name="videoUrl">
+        <Flex css={{ alignItems: 'baseline', justifyContent: 'space-between' }}>
+          <FormLabel>Video URL</FormLabel>
+          <FormMessage match="valueMissing">
+            Please enter a video URL
+          </FormMessage>
+          <FormMessage match="typeMismatch">
+            Please provide a valid URL
+          </FormMessage>
+        </Flex>
+        <Form.Control asChild>
+          <Input
+            type="text"
+            name="videoUrl"
+            required
+            placeholder="https://www.youtube.com/watch?v="
+          />
+        </Form.Control>
+      </FormField>
+      <Form.Submit asChild>
+        <Button css={{ marginTop: 10 }}>Start processing</Button>
+      </Form.Submit>
+    </FormRoot>
+  )
+}
 
 const FormRoot = styled(Form.Root, {})
 
