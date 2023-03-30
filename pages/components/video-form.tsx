@@ -8,9 +8,16 @@ type Props = {
 }
 
 export const VideoForm: React.FC<Props> = ({ onSubmit, isProcessing }) => {
+  const handleSubmit: React.FormEventHandler<HTMLFormElement> = e => {
+    e.preventDefault()
+
+    const videoUrl = (e.target as HTMLFormElement | undefined)?.videoUrl
+      ?.value as string
+    onSubmit(videoUrl)
+  }
   return (
-    <FormRoot>
-      <FormField name="videoUrl">
+    <FormRoot onSubmit={handleSubmit}>
+      <FormField name="email">
         <Flex css={{ alignItems: 'baseline', justifyContent: 'space-between' }}>
           <FormLabel>Video URL</FormLabel>
           <FormMessage match="valueMissing">
@@ -30,7 +37,9 @@ export const VideoForm: React.FC<Props> = ({ onSubmit, isProcessing }) => {
         </Form.Control>
       </FormField>
       <Form.Submit asChild>
-        <Button css={{ marginTop: 10 }}>Start processing</Button>
+        <Button css={{ marginTop: 10 }} disabled={isProcessing}>
+          {isProcessing ? 'Processing..' : 'Start processing'}
+        </Button>
       </Form.Submit>
     </FormRoot>
   )
