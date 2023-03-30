@@ -2,6 +2,7 @@ import Head from 'next/head'
 import StitchesLogo from '../components/StitchesLogo'
 import { styled } from '../stitches.config'
 import { Box } from './components/box'
+import { Output } from './components/output'
 import { VideoForm } from './components/video-form'
 
 const Text = styled('p', {
@@ -43,6 +44,7 @@ export default function Home() {
       <Container size={{ '@initial': '1', '@bp1': '2' }}>
         <Text as="h1">Vlog Transcription &amp; Japanese Translation Tool</Text>
         <VideoForm />
+        <Output>Hello, world</Output>
       </Container>
     </Box>
   )
