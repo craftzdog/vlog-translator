@@ -14,8 +14,12 @@ export default function GET(
   }
 
   console.log('video ID:', video_id)
-  const cmd = spawn(path.join(process.cwd(), 'scripts/download-audio.sh'), [
-    video_id || ''
-  ])
+  const cmd = spawn(
+    'python3',
+    [path.join(process.cwd(), 'scripts/transcribe.py'), video_id || ''],
+    {
+      cwd: process.cwd()
+    }
+  )
   transferChildProcessOutput(cmd, response)
 }
