@@ -1,7 +1,6 @@
 import React from 'react'
 import * as Form from '@radix-ui/react-form'
-import { styled, keyframes } from '@stitches/react'
-import { blackA, violet, mauve } from '@radix-ui/colors'
+import { styled } from '@stitches/react'
 
 const FormDemo = () => (
   <FormRoot>
@@ -66,12 +65,12 @@ const inputStyles = {
   borderRadius: 4,
 
   fontSize: 15,
-  color: 'white',
-  backgroundColor: blackA.blackA5,
-  boxShadow: `0 0 0 1px ${blackA.blackA9}`,
-  '&:hover': { boxShadow: `0 0 0 1px black` },
-  '&:focus': { boxShadow: `0 0 0 2px black` },
-  '&::selection': { backgroundColor: blackA.blackA9, color: 'white' }
+  color: '$foreground',
+  backgroundColor: '$gray300',
+  boxShadow: `0 0 0 1px $gray400`,
+  '&:hover': { boxShadow: `0 0 0 1px $gray600` },
+  '&:focus': { boxShadow: `0 0 0 2px $purple600` },
+  '&::selection': { backgroundColor: '$gray600', color: 'white' }
 }
 
 const Input = styled('input', {
@@ -101,11 +100,14 @@ const Button = styled('button', {
   height: 35,
   width: '100%',
 
-  backgroundColor: 'white',
-  color: violet.violet11,
-  boxShadow: `0 2px 10px ${blackA.blackA7}`,
-  '&:hover': { backgroundColor: mauve.mauve3 },
-  '&:focus': { boxShadow: `0 0 0 2px black` }
+  '&:disabled': {
+    opacity: 0.5
+  },
+  backgroundColor: '$purple500',
+  color: 'white',
+  boxShadow: `0 2px 10px $gray400`,
+  '&:not(:disabled):hover': { backgroundColor: '$purple600' },
+  '&:not(:disabled):focus': { boxShadow: `0 0 0 2px black` }
 })
 
 export default FormDemo
