@@ -6,13 +6,13 @@ const Box = styled('div', {})
 
 const Text = styled('p', {
   fontFamily: '$system',
-  color: '$hiContrast',
+  color: '$hiContrast'
 })
 
 const Link = styled('a', {
   fontFamily: '$system',
   textDecoration: 'none',
-  color: '$purple600',
+  color: '$purple600'
 })
 
 const Container = styled('div', {
@@ -22,16 +22,16 @@ const Container = styled('div', {
   variants: {
     size: {
       1: {
-        maxWidth: '300px',
+        maxWidth: '300px'
       },
       2: {
-        maxWidth: '585px',
+        maxWidth: '585px'
       },
       3: {
-        maxWidth: '865px',
-      },
-    },
-  },
+        maxWidth: '865px'
+      }
+    }
+  }
 })
 
 export default function Home() {

@@ -8,7 +8,7 @@ export const {
   getCssText,
   globalCss,
   styled,
-  theme,
+  theme
 } = createStitches({
   theme: {
     colors: {
@@ -27,7 +27,7 @@ export const {
       purple300: 'hsl(252,100%,94%)',
       purple400: 'hsl(252,75%,84%)',
       purple500: 'hsl(252,78%,60%)',
-      purple600: 'hsl(252,80%,53%)',
+      purple600: 'hsl(252,80%,53%)'
     },
     space: {
       1: '5px',
@@ -35,7 +35,7 @@ export const {
       3: '15px',
       4: '20px',
       5: '25px',
-      6: '35px',
+      6: '35px'
     },
     sizes: {
       1: '5px',
@@ -43,7 +43,7 @@ export const {
       3: '15px',
       4: '20px',
       5: '25px',
-      6: '35px',
+      6: '35px'
     },
     fontSizes: {
       1: '12px',
@@ -51,32 +51,32 @@ export const {
       3: '15px',
       4: '17px',
       5: '19px',
-      6: '21px',
+      6: '21px'
     },
     fonts: {
-      system: 'system-ui',
-    },
+      system: 'system-ui'
+    }
   },
   utils: {
     marginX: (value: Stitches.PropertyValue<'margin'>) => ({
       marginLeft: value,
-      marginRight: value,
+      marginRight: value
     }),
     marginY: (value: Stitches.PropertyValue<'margin'>) => ({
       marginTop: value,
-      marginBottom: value,
+      marginBottom: value
     }),
     paddingX: (value: Stitches.PropertyValue<'padding'>) => ({
       paddingLeft: value,
-      paddingRight: value,
+      paddingRight: value
     }),
     paddingY: (value: Stitches.PropertyValue<'padding'>) => ({
       paddingTop: value,
-      paddingBottom: value,
-    }),
+      paddingBottom: value
+    })
   },
   media: {
     bp1: '(min-width: 520px)',
-    bp2: '(min-width: 900px)',
-  },
+    bp2: '(min-width: 900px)'
+  }
 })
