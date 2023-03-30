@@ -10,6 +10,7 @@ import {
   TabsTrigger
 } from '../components/tabs'
 import { useState } from 'react'
+import { extractVideoIdFromUrl } from '../utils/api-client'
 
 const Text = styled('p', {
   fontFamily: '$system',
@@ -47,7 +48,8 @@ export default function Home() {
   const [resultTranscript, setResultTranscript] = useState('')
 
   const handleStartProcessing = async (videoUrl: string) => {
-    // TODO
+    const videoId = extractVideoIdFromUrl(videoUrl)
+    console.log('videoId:', videoId)
   }
 
   return (
