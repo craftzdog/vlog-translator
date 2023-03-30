@@ -2,7 +2,7 @@ import React from 'react'
 import * as Form from '@radix-ui/react-form'
 import { styled } from '@stitches/react'
 
-const FormDemo = () => (
+export const VideoForm = () => (
   <FormRoot>
     <FormField name="email">
       <Flex css={{ alignItems: 'baseline', justifyContent: 'space-between' }}>
@@ -109,5 +109,3 @@ const Button = styled('button', {
   '&:not(:disabled):hover': { backgroundColor: '$purple600' },
   '&:not(:disabled):focus': { boxShadow: `0 0 0 2px black` }
 })
-
-export default FormDemo
