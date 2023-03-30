@@ -10,7 +10,7 @@ import {
   TabsTrigger
 } from '../components/tabs'
 import { useState } from 'react'
-import { extractVideoIdFromUrl } from '../utils/api-client'
+import { extractVideoIdFromUrl, processVideo } from '../utils/api-client'
 
 const Text = styled('p', {
   fontFamily: '$system',
@@ -53,7 +53,12 @@ export default function Home() {
       setResultTranscript('')
       setProcessing(true)
 
-      // TODO
+      const transcriptInJapanese = await processVideo(videoId, message => {
+        setProgressOutput(prev => prev + message)
+      })
+      if (transcriptInJapanese) {
+        setResultTranscript(transcriptInJapanese)
+      }
 
       setProcessing(false)
       setActiveTab('result')
