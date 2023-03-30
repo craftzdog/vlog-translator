@@ -61,7 +61,7 @@ export default function Home() {
       }
 
       setProcessing(false)
-      setActiveTab('result')
+      // setActiveTab('result')
     } else {
       alert('Invalid URL')
     }
