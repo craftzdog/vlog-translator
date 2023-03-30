@@ -14,7 +14,30 @@ export const {
     colors: {
       hiContrast: 'hsl(206,10%,5%)',
       loContrast: 'white',
+      foreground: '#202020',
 
+      gray100: 'hsl(206,22%,99%)',
+      gray200: 'hsl(206,12%,97%)',
+      gray300: 'hsl(206,11%,92%)',
+      gray400: 'hsl(206,10%,84%)',
+      gray500: 'hsl(206,10%,76%)',
+      gray600: 'hsl(206,10%,44%)',
+
+      purple100: 'hsl(252,100%,99%)',
+      purple200: 'hsl(252,100%,98%)',
+      purple300: 'hsl(252,100%,94%)',
+      purple400: 'hsl(252,75%,84%)',
+      purple500: 'hsl(252,78%,60%)',
+      purple600: 'hsl(252,80%,53%)',
+
+      red100: 'hsl(0,100%,99%)',
+      red200: 'hsl(0,100%,98%)',
+      red300: 'hsl(0,100%,94%)',
+      red400: 'hsl(0,75%,84%)',
+      red500: 'hsl(0,78%,60%)',
+      red600: 'hsl(0,80%,53%)'
+    },
+    shadows: {
       gray100: 'hsl(206,22%,99%)',
       gray200: 'hsl(206,12%,97%)',
       gray300: 'hsl(206,11%,92%)',
