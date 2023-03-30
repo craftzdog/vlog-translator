@@ -3,23 +3,24 @@ import { spawn } from 'child_process'
 import path from 'path'
 import { transferChildProcessOutput } from '../../utils/shell'
 
-export default function GET(
+export default function POST(
   request: NextApiRequest,
   response: NextApiResponse
 ) {
-  const video_id = request.query.video_id as string
-  if (typeof video_id !== 'string') {
+  const srt = request.body
+  if (typeof srt !== 'string') {
     response.status(400).json({ error: 'Invalid request' })
     return
   }
 
-  console.log('video ID:', video_id)
   const cmd = spawn(
     'python3',
-    [path.join(process.cwd(), 'scripts/transcribe.py'), video_id || ''],
+    [path.join(process.cwd(), 'scripts/translate.py')],
     {
       cwd: process.cwd()
     }
   )
+  cmd.stdin.write(srt)
+  cmd.stdin.end()
   transferChildProcessOutput(cmd, response)
 }
