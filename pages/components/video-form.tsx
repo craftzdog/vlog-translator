@@ -4,36 +4,30 @@ import { styled } from '@stitches/react'
 
 export const VideoForm = () => (
   <FormRoot>
-    <FormField name="email">
+    <FormField name="videoUrl">
       <Flex css={{ alignItems: 'baseline', justifyContent: 'space-between' }}>
-        <FormLabel>Email</FormLabel>
-        <FormMessage match="valueMissing">Please enter your email</FormMessage>
+        <FormLabel>Video URL</FormLabel>
+        <FormMessage match="valueMissing">Please enter a video URL</FormMessage>
         <FormMessage match="typeMismatch">
-          Please provide a valid email
+          Please provide a valid URL
         </FormMessage>
       </Flex>
       <Form.Control asChild>
-        <Input type="email" required />
-      </Form.Control>
-    </FormField>
-    <FormField name="question">
-      <Flex css={{ alignItems: 'baseline', justifyContent: 'space-between' }}>
-        <FormLabel>Question</FormLabel>
-        <FormMessage match="valueMissing">Please enter a question</FormMessage>
-      </Flex>
-      <Form.Control asChild>
-        <Textarea required />
+        <Input
+          type="text"
+          name="videoUrl"
+          required
+          placeholder="https://www.youtube.com/watch?v="
+        />
       </Form.Control>
     </FormField>
     <Form.Submit asChild>
-      <Button css={{ marginTop: 10 }}>Post question</Button>
+      <Button css={{ marginTop: 10 }}>Start processing</Button>
     </Form.Submit>
   </FormRoot>
 )
 
-const FormRoot = styled(Form.Root, {
-  width: 260
-})
+const FormRoot = styled(Form.Root, {})
 
 const FormField = styled(Form.Field, {
   display: 'grid',
@@ -44,12 +38,12 @@ const FormLabel = styled(Form.Label, {
   fontSize: 15,
   fontWeight: 500,
   lineHeight: '35px',
-  color: 'white'
+  color: '$foreground'
 })
 
 const FormMessage = styled(Form.Message, {
   fontSize: 13,
-  color: 'white',
+  color: '$red600',
   opacity: 0.8
 })
 
@@ -78,12 +72,6 @@ const Input = styled('input', {
   height: 35,
   lineHeight: 1,
   padding: '0 10px'
-})
-
-const Textarea = styled('textarea', {
-  ...inputStyles,
-  resize: 'none',
-  padding: 10
 })
 
 const Button = styled('button', {
