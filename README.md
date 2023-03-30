@@ -2,6 +2,8 @@
 
 A personal tool for transcribing & translating my vlogs into Japanese.
 
+![screenshot](./docs/screenshot.png)
+
 ## Ingredients
 
 - Python
