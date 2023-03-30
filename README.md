@@ -1,27 +1,44 @@
-# Stitches Example
+# Vlog Transcription & Japanese Translation Tool
 
-This example shows how to use the [Stitches CSS-in-JS Library](https://github.com/modulz/stitches).
+A personal tool for transcribing & translating my vlogs into Japanese.
 
-## Deploy your own
+## Ingredients
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-stitches)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-stitches&project-name=with-stitches&repository-name=with-stitches)
+- Python
+  - [pysrt](https://github.com/byroot/pysrt) - Python parser for SubRip (srt) files
+  - [yt-dlp](https://github.com/yt-dlp/yt-dlp) - A youtube-dl fork with additional features and fixes
+  - [openai](https://github.com/openai/openai-python) - The OpenAI Python library provides convenient access to the OpenAI API from applications written in the Python language
+- Next.js
+- [Radix UI](https://www.radix-ui.com/) - Unstyled, accessible components for building high‑quality design systems and web apps in React
+- [Stitches](https://github.com/modulz/stitches) - CSS-in-JS Library
 
 ## How to use
 
-Execute [Create Next App](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
 ```bash
-npx create-next-app --example with-stitches with-stitches-app
+pip install -r requirements.txt
+npm i
+npm run dev
 ```
 
-```bash
-yarn create next-app --example with-stitches with-stitches-app
+## Project Structure
+
+```
+PROJECT_ROOT
+├── components    # React components
+├── pages         # Pages
+│   └── api       # API routes
+├── public
+├── scripts       # Python scripts
+├── tmp           # Temporary files
+└── utils         # Utility modules
 ```
 
-```bash
-pnpm create next-app --example with-stitches with-stitches-app
-```
+## License
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+MIT License.
+
+---
+
+Looking for a Markdown note-taking app? Check out my app called Inkdrop:
+
+[![Inkdrop](https://github.com/craftzdog/dotfiles-public/raw/master/images/inkdrop.png)](https://www.inkdrop.app/)
