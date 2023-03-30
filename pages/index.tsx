@@ -49,7 +49,17 @@ export default function Home() {
 
   const handleStartProcessing = async (videoUrl: string) => {
     const videoId = extractVideoIdFromUrl(videoUrl)
-    console.log('videoId:', videoId)
+    if (typeof videoId === 'string') {
+      setResultTranscript('')
+      setProcessing(true)
+
+      // TODO
+
+      setProcessing(false)
+      setActiveTab('result')
+    } else {
+      alert('Invalid URL')
+    }
   }
 
   return (
