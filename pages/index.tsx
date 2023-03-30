@@ -1,19 +1,12 @@
 import Head from 'next/head'
-import StitchesLogo from '../components/StitchesLogo'
 import { styled } from '../stitches.config'
-import { Box } from './components/box'
-import { Output } from './components/output'
-import { VideoForm } from './components/video-form'
+import { Box } from '../components/box'
+import { Output } from '../components/output'
+import { VideoForm } from '../components/video-form'
 
 const Text = styled('p', {
   fontFamily: '$system',
   color: '$hiContrast'
-})
-
-const Link = styled('a', {
-  fontFamily: '$system',
-  textDecoration: 'none',
-  color: '$purple600'
 })
 
 const Container = styled('div', {
