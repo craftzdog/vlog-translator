@@ -8,23 +8,11 @@ export async function processVideo(
   videoId: string,
   callback: ProgressCallback
 ): Promise<false | string> {
-  // callback('Downloading audio...\n')
-  // await downloadAudio(videoId, callback)
-  //
-  // callback('\nTranscribing audio. It takes a while...\n')
-  // const srt = await transcribe(videoId, callback)
-  const srt = `1
-00:00:01,000 --> 00:00:06,000
-Hey what's up, it's Takuya here. Welcome back to my weekly vlog.
+  callback('Downloading audio...\n')
+  await downloadAudio(videoId, callback)
 
-2
-00:00:06,000 --> 00:00:12,000
-So, we've got lots of updates on the Ink Drop for mobile version 5. So, let's get started.
-
-3
-00:00:12,000 --> 00:00:22,000
-First one is Solarize Dark Theme. This is a green UI theme, originally designed for the terminal.
-`
+  callback('\nTranscribing audio. It takes a while...\n')
+  const srt = await transcribe(videoId, callback)
 
   if (srt) {
     callback('\nTranslating text...\n')
