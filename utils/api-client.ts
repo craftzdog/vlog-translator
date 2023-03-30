@@ -11,7 +11,10 @@ export async function processVideo(
   callback('Downloading audio...\n')
   await downloadAudio(videoId, callback)
 
-  return 'result'
+  callback('\nTranscribing audio. It takes a while...\n')
+  const srt = await transcribe(videoId, callback)
+
+  return srt
 }
 
 export async function downloadAudio(
@@ -20,6 +23,23 @@ export async function downloadAudio(
 ) {
   const res = await fetch(
     `/api/audio?${new URLSearchParams({ video_id: videoId })}`,
+    {}
+  )
+  const reader = res.body?.getReader()
+
+  if (reader) {
+    return streamResponse(reader, onProgress)
+  } else {
+    return false
+  }
+}
+
+export async function transcribe(
+  videoId: string,
+  onProgress: ProgressCallback
+): Promise<string | false> {
+  const res = await fetch(
+    `/api/transcript?${new URLSearchParams({ video_id: videoId })}`,
     {}
   )
   const reader = res.body?.getReader()
