@@ -19,7 +19,12 @@ def translate_text(text):
         max_tokens=3000,
         temperature=0,
     )
-    return response.choices[0].text.strip()
+    translated = response.choices[0].text.strip()
+    if translated.startswith('「'):
+        translated = translated[1:]
+    if translated.endswith('」'):
+        translated = translated[:-1]
+    return translated
 
 for index, subtitle in enumerate(subs):
     subtitle.text = translate_text(subtitle.text)
