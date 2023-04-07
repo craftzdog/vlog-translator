@@ -7,9 +7,14 @@ audio_file_path = os.path.join(os.getcwd(), 'tmp', video_id + '.m4a')
 
 audio_file = open(audio_file_path, "rb")
 transcript = openai.Audio.transcribe(
-  file = audio_file,
-  model = "whisper-1",
+  file=audio_file,
+  model="whisper-1",
   response_format='srt',
-  prompt = 'I am a programmer. My name is Takuya. This is a vlog about my app development, tech review, lifehacks, etc. I have my own product called Inkdrop.'
+  prompt=(
+      'I am a programmer. My name is Takuya. '
+      'This is a vlog about my app development, tech review, lifehacks, etc. '
+      'I have my own product called Inkdrop.'
+      'My YouTube channel is called devaslife. '
+  )
 )
 print(transcript)
