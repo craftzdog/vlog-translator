@@ -4,6 +4,10 @@ A personal tool for transcribing & translating my vlogs into Japanese.
 
 ![screenshot](./docs/screenshot.png)
 
+## Tutorial video
+
+[![frame_02](./docs/frame_02.jpg)](https://youtu.be/UNGi144eVbI)
+
 ## Ingredients
 
 - Python
