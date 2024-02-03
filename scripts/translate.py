@@ -22,7 +22,7 @@ def translate_text(text):
     prompt = prompt_base
     prompt += text + "\n[END]"
 
-    response = openai.Completion.create(
+    response = openai.completions.create(
         model="text-davinci-003",
         prompt=prompt,
         max_tokens=3000,
